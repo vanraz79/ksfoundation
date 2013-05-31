@@ -2,6 +2,18 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8300",
   "files" : {
+    "\/sass\/foundation\/components\/_pricing-tables.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_pricing-tables.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_pricing-tables.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/sass\/foundation\/components\/_side-nav.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -35,18 +47,6 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/thehen\/res\/app.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/foundation\/components\/_pricing-tables.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_pricing-tables.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_pricing-tables.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -302,6 +302,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/thehen\/res\/app.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/thehen\/res\/app.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/thehen\/res\/app-ck.js",
+      "fileType" : 64
+    },
     "\/sass\/foundation\/components\/_custom-forms.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -371,18 +382,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_button-groups.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_button-groups.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_button-groups.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_global.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -404,6 +403,42 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_panels.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_button-groups.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_button-groups.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_button-groups.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_section.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_section.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_section.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_alert-boxes.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_alert-boxes.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_alert-boxes.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -431,30 +466,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_alert-boxes.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_alert-boxes.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_alert-boxes.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/foundation\/components\/_section.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_section.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_section.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_magellan.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -466,17 +477,6 @@
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_magellan.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/thehen\/res\/core.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/thehen\/res\/core.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/thehen\/res\/core-ck.js",
-      "fileType" : 64
     },
     "\/sass\/foundation\/components\/_type.scss" : {
       "ignoreWasSetByUser" : 0,
