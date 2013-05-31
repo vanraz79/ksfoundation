@@ -1,0 +1,24 @@
+<div class="row-fluid">
+	<div class="span12">
+		<h1>{{ collection.name }}</h1>
+		<ul class="thumbnails">
+			{% for item in collection.list %}
+				<li class="span3">
+					<div class="thumbnail">
+						<a href="{{ item | product_url }}" class="thumbnail">
+							<img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+						</a>
+						<div class="caption">
+							<h5>{{ item.name }}</h5>
+							<p>{{ item.body-text }}</p>
+							<h6>{{ item.price | money }}</h6>
+							<span>
+								<a href="{{ item | product_url }}">View details &raquo;</a>
+							</span>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

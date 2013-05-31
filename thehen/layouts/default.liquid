@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>{{ settings.store.name }}</title>
+	{{ 'normalize.css' | resource_url | stylesheet_tag  }}
+	{{ 'app.css' | resource_url | stylesheet_tag  }}
+	
+	{{ 'v1' | api_url | script_tag }}
+	
+	<script src="{{'lib/foundation/' | global_url }}js/vendor/custom.modernizr.js"></script>
+	<script>
+	document.write('<script src=' +
+	('__proto__' in {} ? '{{"lib/foundation/" | global_url }}js/vendor/zepto' : '{{"lib/foundation/" | global_url }}js/vendor/jquery') +
+	'.js><\/script>')
+	</script>
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.js"></script>
+	<!--
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.alerts.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.clearing.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.cookie.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.dropdown.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.forms.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.joyride.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.magellan.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.orbit.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.placeholder.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.reveal.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.section.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.tooltips.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.topbar.js"></script>
+	
+	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.interchange.js"></script>
+	
+	-->
+	
+	<script>
+	  $(document).foundation();
+	</script>
+	{{ 'core.js' | resource_url | script_tag }}
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<div class="subnav">
+				<ul class="nav nav-pills">
+					<li class="logo">
+						<a href="{{ "/" | home_url }}">
+							{% if theme.store_logo %}
+								<img src="{{ theme.store_logo | resource_url }}" />
+							{% else %}
+								<span>{{ settings.store.name }}</span>
+							{% endif %}
+						</a>
+					</li>
+
+					{% for link in menu.main-menu.links %}
+						<li {% if link.active %}class="active"{% endif %}>
+							<a href="{{ link.href }}">{{ link.name }}</a>
+							{% if link.links %}
+							<ul class="submenu">
+								{% for sublink in link.links %}
+									<li {% if sublink.active %}class="active"{% endif %} >
+										<a href="{{ sublink.href }}">{{ sublink.name }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+
+					<li class="shopping-cart"><a href="/cart">Shopping cart</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<div id="main">
+			{{ content }}
+		</div>
+
+		<footer class="footer">
+			<p class="pull-right">
+				{{ powered_by }}
+			</p>
+			Copyright &copy; {{ "now" | date : "%Y" }} {{ settings.store.name }}
+		</footer>
+	</div>
+
+</body>
+</html>

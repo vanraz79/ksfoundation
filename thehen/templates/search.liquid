@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="span12">
+		<h1>Search results</h1>
+		{% if product.count %}
+			<ul class="thumbnails">
+				{% for item in product.list %}
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="{{ item | product_url }}" class="thumbnail">
+								<img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+							</a>
+							<div class="caption">
+								<h5>{{ item.name }}</h5>
+								<p>{{ item.body-text }}</p>
+								<h6>{{ item.price | money }}</h6>
+								<span>
+									<a href="{{ item | product_url }}">View details &raquo;</a>
+								</span>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>We didn't find any products that matched your search.</p>
+		{% endif %}
+	</div>
+</div>
