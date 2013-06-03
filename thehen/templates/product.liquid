@@ -1,9 +1,7 @@
-{% assign image_thumb_size = "115" %}
-
-<div class="row-fluid product-information">
-	<div class="span6">
+<div class="row">
+	<div class="large-6 columns">
 		<div class="image">
-			<img src="{{ product.images.first }}?width=460&height=460&fill=1&align=center" alt="{{ product.name }}" />
+			<img src="{{ product.images.first }}?width=460&height=460&align=center" alt="{{ product.name }}" />
 		</div>
 
 		{% assign product_image_count = product.image | size %}
@@ -22,7 +20,7 @@
 		{% endif %}
 
 	</div>
-	<div class="span6">
+	<div class="large-6 columns">
 		<form action="/cart/add" method="POST">
 			<h2>{{ product.name }}</h2>
 
@@ -58,7 +56,42 @@
 		</form>
 	</div>
 </div>
+<div class="row hide-for-small">
+    <div class="large-12 columns">
+    	<h3>Other products</h3>
+    	<div class="infopanel">
+    		<p>The other products panel is a great way to let your customers know what products you're currently promoting.  You can use it to feature products on sale, currently in season, newly back in stock, or just products you'd like to sell more of.</p>
+    	</div>	
+      <div class="row">
 
+    <!-- Thumbnails -->
+
+        <div class="large-3 small-6 columns">
+            <img src="http://placehold.it/500x500&text=Thumbnail" />
+            <h6 class="panel">Description</h6>
+        </div>
+
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/500x500&text=Thumbnail" />
+          <h6 class="panel">Description</h6>
+        </div>
+
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/500x500&text=Thumbnail" />
+          <h6 class="panel">Description</h6>
+        </div>
+
+        <div class="large-3 small-6 columns">
+          <img src="http://placehold.it/500x500&text=Thumbnail" />
+          <h6 class="panel">Description</h6>
+        </div>
+
+
+    <!-- End Thumbnails -->
+
+      </div>
+    </div>
+</div>
 <script type="text/javascript">
 	if (window.jQuery && window.kloudstores)
 	{
