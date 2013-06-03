@@ -18,6 +18,8 @@
 	<script src="{{'lib/foundation/' | global_url }}js/vendor/jquery.js"></script>
 	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.js"></script>
 	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.orbit.js"></script>
+    <script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.topbar.js"></script>
+    <script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.section.js"></script>
 	{{ 'app.js' | resource_url | script_tag }}
 	<!--
 	
@@ -52,201 +54,374 @@
 	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.interchange.js"></script>
 	
 	-->
-	
-
-	
 </head>
 
 <body>
 	<div class="row">
-  <div class="large-12 columns">
+        <div class="large-12 columns">  
 
     <!-- Navigation -->
-      <nav class="top-bar">
-        <ul class="title-area">
-          <!-- Title Area -->
-          <li class="name">
-            <h1>
-              <a href="#">
-                Top Bar Title
-              </a>
-            </h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-        </ul>
+            <nav class="top-bar">
+                <ul class="title-area">
+                  <!-- Title Area -->
+                  <li class="name">
+                    <h1>
+                      <a href="#">
+                        Top Bar Title
+                      </a>
+                    </h1>
+                  </li>
+                  <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+                </ul>
 
-        <section class="top-bar-section">
-          <ul class="left">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-          </ul>
+                <section class="top-bar-section">
+                  <ul class="left">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                  </ul>
 
-          <ul class="right">
-            <li class="search">
-              <form>
-                <input type="search">
-              </form>
-            </li>
+                  <ul class="right">
+                    <li class="search">
+                      <form>
+                        <input type="search">
+                      </form>
+                    </li>
 
-            <li class="has-button">
-              <a class="small button" href="#">Search</a>
-            </li>
-          </ul>
-        </section>
-      </nav>
+                    <li class="has-button">
+                      <a class="small button" href="#">Search</a>
+                    </li>
+                  </ul>
+                </section>
+            </nav>
 
     <!-- End Navigation -->
   
+        </div>
     </div>
-  </div>
 
 
-  <div class="row">
-    <div class="large-12 columns">
+    <div class="row">
+        <div class="large-12 columns">
+        	<h3>Hero carousel (wide)</h3>
+        	<div class="panel">
+        		<p>Wide hero carousel for promoting your products or collections</p>
+        	</div>	
 
     <!-- Desktop Slider -->
 
-      <div class="hide-for-small">
-       
+          	<div class="hide-for-small">
+                <div class="preloader"></div>
+           		<ul data-orbit>
+    	            <li>
+    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
+    	              	<div class="orbit-caption">Caption text</div>
+    	            </li>
+    	            <li>
+    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
+    	              	<div class="orbit-caption">Caption text</div>
+    	            </li>
+    	            <li>
+    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
+    	              	<div class="orbit-caption">Caption text</div>
+    	            </li>
+              	</ul>
 
-          <ul data-orbit>
-            <li>
-              <img src="http://placehold.it/1000x400&text=Slide Image" />
-              <div class="orbit-caption">...</div>
-            </li>
-            <li>
-              <img src="http://placehold.it/1000x400&text=Slide Image" />
-              <div class="orbit-caption">...</div>
-            </li>
-            <li>
-              <img src="http://placehold.it/1000x400&text=Slide Image" />
-              <div class="orbit-caption">...</div>
-            </li>
-          </ul>
-        </div>
-
+            </div>
     <!-- End Desktop Slider -->
 
 
     <!-- Mobile Header -->
 
 
-    <div class="row">
-      <div class="small-12 show-for-small"><br>
-        <img src="http://placehold.it/1000x600&text=For Small Screens" />
-      </div>
-    </div>
+            <div class="row">
+              <div class="small-12 show-for-small"><br>
+                <img src="http://placehold.it/1000x600&text=For Small Screens" />
+              </div>
+            </div>
 
 
   <!-- End Mobile Header -->
 
+        </div>
     </div>
-  </div><br>
-
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="row">
-
-    <!-- Thumbnails -->
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
+    <div class="row">
+        <div class="large-12 columns">
+            <h3>Hero carousel (narrow)</h3>
+            <div class="panel">
+                <p>Narrow hero carousel with side controls</p>
+            </div> 
         </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/250x250&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-    <!-- End Thumbnails -->
-
-      </div>
     </div>
-  </div>
-
-
-
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="row">
-
-    <!-- Content -->
-
+    <div class="slider-secondary-bg">
+    <div class="row">
+        
         <div class="large-8 columns">
-          <div class="panel radius">
-
-          <div class="row">
-          <div class="large-6 small-6 columns">
-
-            <h4>Header</h4><hr/>
-            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
-            </h5>
-
-          <div class="show-for-small" align="center">
-            <a href="#" class="small radius button">Call To Action!</a><br>
-
-            <a href="#" class="small radius button">Call To Action!</a>
-          </div>
-
-          </div>
-          <div class="large-6 small-6 columns">
-
-            <p>Suspendisse ultrices ornare tempor. Aenean eget ultricies libero. Phasellus non ipsum eros. Vivamus at dignissim massa. Aenean dolor libero, blandit quis interdum et, malesuada nec ligula. Nullam erat erat, eleifend sed pulvinar ac. Suspendisse ultrices ornare tempor. Aenean eget ultricies libero.
-          </p>
+            <ul data-orbit data-options="bullets: false; timer: false">
+                <li data-orbit-slide="slide-1">
+                    <img src="http://placehold.it/1000x500&text=Slide Image 1" />
+                    <div class="orbit-caption">Caption text</div>
+                </li>
+                <li data-orbit-slide="slide-2">
+                    <img src="http://placehold.it/1000x500&text=Slide Image 2" />
+                    <div class="orbit-caption">Caption text</div>
+                </li>
+                <li data-orbit-slide="slide-3">
+                    <img src="http://placehold.it/1000x500&text=Slide Image 3" />
+                    <div class="orbit-caption">Caption text</div>
+                </li>
+                <li data-orbit-slide="slide-4">
+                    <img src="http://placehold.it/1000x500&text=Slide Image 4" />
+                    <div class="orbit-caption">Caption text</div>
+                </li>
+                <li data-orbit-slide="slide-5">
+                    <img src="http://placehold.it/1000x500&text=Slide Image 5" />
+                    <div class="orbit-caption">Caption text</div>
+                </li>
+            </ul>
         </div>
-
+        <div class="large-4 columns">
+            <ul class="side-nav slider-nav">
+                <li>
+                    <a href="#" data-orbit-link="slide-1">
+                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
+                        <span class="price">$132</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-orbit-link="slide-2">
+                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
+                        <span class="price">$132</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-orbit-link="slide-3">
+                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
+                        <span class="price">$132</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-orbit-link="slide-4">
+                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
+                        <span class="price">$132</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-orbit-link="slide-5">
+                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
+                        <span class="price">$132</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        </div>
-        </div>
-
-        <div class="large-4 columns hide-for-small">
-
-          <h4>Sidebar</h4><hr/>
-
-          a menu
-
-        </div>
-
-    <!-- End Content -->
-
-      </div>
     </div>
-  </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+        	<h3>Featured products (wide)</h3>
+        	<div class="panel">
+        		<p>The featured products panel is a great way to let your customers know what products you're currently promoting.  You can use it to feature products on sale, currently in season, newly back in stock, or just products you'd like to sell more of.</p>
+        	</div>	
+          <div class="row">
+
+        <!-- Thumbnails -->
+
+            <div class="large-3 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail" />
+                <h6 class="panel">Description</h6>
+            </div>
+
+            <div class="large-3 small-6 columns">
+              <img src="http://placehold.it/500x500&text=Thumbnail" />
+              <h6 class="panel">Description</h6>
+            </div>
+
+            <div class="large-3 small-6 columns">
+              <img src="http://placehold.it/500x500&text=Thumbnail" />
+              <h6 class="panel">Description</h6>
+            </div>
+
+            <div class="large-3 small-6 columns">
+              <img src="http://placehold.it/500x500&text=Thumbnail" />
+              <h6 class="panel">Description</h6>
+            </div>
+
+        <!-- End Thumbnails -->
+
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-8 columns">
+                    <h3>Featured products (narrow)</h3>
+                     
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+                    <div class="large-4 small-6 columns">
+                        <img src="http://placehold.it/500x500&text=Thumbnail" />
+                        <h6 class="panel">Description</h6>
+                    </div>
+
+                </div>
+
+                <div class="large-4 columns hide-for-small">
+                    <h4>Sidenav</h4><hr/>
+                    <div class="section-container accordion" data-section="accordion">
+                        <section>
+                            <p class="title" data-section-title><a href="#panel1">Category 1</a></p>
+                            <div class="content" data-section-content>
+                                <ul class="side-nav">
+                                    <li><a href="#">Lorem ipsum dolor.</a></li>
+                                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+                                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+                                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <p class="title" data-section-title><a href="#panel2">Category 2</a></p>
+                            <div class="content" data-section-content>
+                                <ul class="side-nav">
+                                    <li><a href="#">Lorem ipsum dolor.</a></li>
+                                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+                                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+                                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+                                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <p class="title" data-section-title><a href="#panel1">Category 3</a></p>
+                            <div class="content" data-section-content>
+                                <ul class="side-nav">
+                                    <li><a href="#">Lorem ipsum dolor.</a></li>
+                                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+                                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+                                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <p class="title" data-section-title><a href="#panel2">Category 4</a></p>
+                            <div class="content" data-section-content>
+                                <ul class="side-nav">
+                                    <li><a href="#">Lorem ipsum dolor.</a></li>
+                                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+                                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+                                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+                                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+	    <div class="large-12 columns">
+	    	
+            <h3>Pricing tables</h3>
+	    	<div class="panel">
+	    		<p>If you're making a rockin' marketing site for a subscription-based product, you are likely in need of a pricing table</p>
+	    	</div>
+	    	
+		    <div class="row">	
+
+		    <!-- Pricing tables -->
+
+		        <div class="large-4 small-12 columns">
+		    		<ul class="pricing-table">
+		    		  	<li class="title">Standard</li>
+		    		  	<li class="price">$99.99</li>
+		    		  	<li class="description">An awesome description</li>
+		    		  	<li class="bullet-item">1 Database</li>
+		    		  	<li class="bullet-item">5GB Storage</li>
+		    		  	<li class="bullet-item">20 Users</li>
+		    		  	<li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+		    		</ul>
+		        </div>
+		        <div class="large-4 small-12 columns">
+		    		<ul class="pricing-table">
+		    		  	<li class="title">Standard</li>
+		    		  	<li class="price">$99.99</li>
+		    		  	<li class="description">An awesome description</li>
+		    		  	<li class="bullet-item">1 Database</li>
+		    		  	<li class="bullet-item">5GB Storage</li>
+		    		  	<li class="bullet-item">20 Users</li>
+		    		  	<li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+		    		</ul>
+		        </div>
+		        <div class="large-4 small-12 columns">
+		    		<ul class="pricing-table">
+		    		  	<li class="title">Standard</li>
+		    		  	<li class="price">$99.99</li>
+		    		  	<li class="description">An awesome description</li>
+		    		  	<li class="bullet-item">1 Database</li>
+		    		  	<li class="bullet-item">5GB Storage</li>
+		    		  	<li class="bullet-item">20 Users</li>
+		    		  	<li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+		    		</ul>
+		        </div>
+
+
+		    <!-- End Pricing tables -->
+
+		     </div>
+	    </div>
+ 	</div>
+
+
+
+    
 
     <!-- Footer -->
-
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr>
-      <div class="row">
-        <div class="large-6 columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr>
+            <div class="row">
+                <div class="large-6 columns">
+                  <p>&copy; Copyright no one at all. Go to town.</p>
+                </div>
+                <div class="large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-          $(document).foundation();
-        </script>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 </html>
