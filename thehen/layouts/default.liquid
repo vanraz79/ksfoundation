@@ -67,7 +67,7 @@
                   <li class="name">
                     <h1>
                       <a href="#">
-                        Top Bar Title
+                        {{ settings.store.name }}
                       </a>
                     </h1>
                   </li>
@@ -75,22 +75,31 @@
                 </ul>
 
                 <section class="top-bar-section">
-                  <ul class="left">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                  </ul>
+                    <ul class="left">
+                        {% for link in menu.main-menu.links %}
+                            <li class="{% if link.active %}active{% endif %} {% if link.links %}has-dropdown{% endif %}">
+                                <a href="{{ link.href }}">{{ link.name }}</a>
+                                {% if link.links %}
+                                <ul class="dropdown">
+                                    {% for sublink in link.links %}
+                                        <li {% if sublink.active %}class="active"{% endif %}>
+                                            <a href="{{ sublink.href }}">{{ sublink.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
 
-                  <ul class="right">
-                    <li class="search">
-                      <form>
-                        <input type="search">
-                      </form>
-                    </li>
-
-                    <li class="has-button">
-                      <a class="small button" href="#">Search</a>
-                    </li>
-                  </ul>
+                    <div class="right search-form hide-for-small hide-for-medium">
+                        <div class="row collapse">
+                        <form>
+                            <div class="large-9 small-8 columns"><input type="search"></div>
+                            <div class="large-3 small-4 columns"><a class="small button prefix" href="#">Search</a></div>
+                        </form>
+                        </div>
+                    </div>
                 </section>
             </nav>
 
@@ -103,7 +112,7 @@
     <div class="row">
         <div class="large-12 columns">
         	<h3>Hero carousel (wide)</h3>
-        	<div class="panel">
+        	<div class="infopanel">
         		<p>Wide hero carousel for promoting your products or collections</p>
         	</div>	
 
@@ -112,19 +121,18 @@
           	<div class="hide-for-small">
                 <div class="preloader"></div>
            		<ul data-orbit>
-    	            <li>
-    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
-    	              	<div class="orbit-caption">Caption text</div>
-    	            </li>
-    	            <li>
-    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
-    	              	<div class="orbit-caption">Caption text</div>
-    	            </li>
-    	            <li>
-    	              	<img src="http://placehold.it/1000x400&text=Slide Image" />
-    	              	<div class="orbit-caption">Caption text</div>
-    	            </li>
-              	</ul>
+                    {% for item in collections.featured.list %}
+                        <li>
+                            <a href="{{ item | product_url }}">
+                                <img src="{{ item.images.first }}?width=970&height=390&fill=1&align=center">
+                                <div class="orbit-caption">
+                                    <span class="name">{{ item.body-text }}</span>
+                                    <span class="price right">{{ item.price | money }}</span>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+    	        </ul>
 
             </div>
     <!-- End Desktop Slider -->
@@ -147,7 +155,7 @@
     <div class="row">
         <div class="large-12 columns">
             <h3>Hero carousel (narrow)</h3>
-            <div class="panel">
+            <div class="infopanel">
                 <p>Narrow hero carousel with side controls</p>
             </div> 
         </div>
@@ -157,60 +165,30 @@
         
         <div class="large-8 columns">
             <ul data-orbit data-options="bullets: false; timer: false">
-                <li data-orbit-slide="slide-1">
-                    <img src="http://placehold.it/1000x500&text=Slide Image 1" />
-                    <div class="orbit-caption">Caption text</div>
-                </li>
-                <li data-orbit-slide="slide-2">
-                    <img src="http://placehold.it/1000x500&text=Slide Image 2" />
-                    <div class="orbit-caption">Caption text</div>
-                </li>
-                <li data-orbit-slide="slide-3">
-                    <img src="http://placehold.it/1000x500&text=Slide Image 3" />
-                    <div class="orbit-caption">Caption text</div>
-                </li>
-                <li data-orbit-slide="slide-4">
-                    <img src="http://placehold.it/1000x500&text=Slide Image 4" />
-                    <div class="orbit-caption">Caption text</div>
-                </li>
-                <li data-orbit-slide="slide-5">
-                    <img src="http://placehold.it/1000x500&text=Slide Image 5" />
-                    <div class="orbit-caption">Caption text</div>
-                </li>
+                {% for item in collections.featured.list  limit:4 %}
+                    <li data-orbit-slide="slide-{{ forloop.index }}">
+                        <a href="{{ item | product_url }}">
+                            <img src="{{ item.images.first }}?height=290&fill=1&align=center">
+                            <div class="orbit-caption">
+                                <span class="name">{{ item.body-text }}</span>
+                                <span class="price right">{{ item.price | money }}</span>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="large-4 columns">
             <ul class="side-nav slider-nav">
+                {% for item in collections.featured.list limit:4 %}
                 <li>
-                    <a href="#" data-orbit-link="slide-1">
-                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
-                        <span class="price">$132</span>
+                    <a href="#" data-orbit-link="slide-{{ forloop.index }}">
+                        <span class="thumb"><img src="{{ item.images.first }}?height=40&fill=1&align=center" /></span>
+                        {{ item.name }}<br />
+                        <span class="price">{{ item.price | money }}</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#" data-orbit-link="slide-2">
-                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
-                        <span class="price">$132</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-orbit-link="slide-3">
-                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
-                        <span class="price">$132</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-orbit-link="slide-4">
-                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
-                        <span class="price">$132</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-orbit-link="slide-5">
-                        <img src="http://placehold.it/50x40&text=Slide Image" /> Lorem ipsum dolor.<br />
-                        <span class="price">$132</span>
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -218,7 +196,7 @@
     <div class="row">
         <div class="large-12 columns">
         	<h3>Featured products (wide)</h3>
-        	<div class="panel">
+        	<div class="infopanel">
         		<p>The featured products panel is a great way to let your customers know what products you're currently promoting.  You can use it to feature products on sale, currently in season, newly back in stock, or just products you'd like to sell more of.</p>
         	</div>	
           <div class="row">
@@ -347,7 +325,7 @@
 	    <div class="large-12 columns">
 	    	
             <h3>Pricing tables</h3>
-	    	<div class="panel">
+	    	<div class="infopanel">
 	    		<p>If you're making a rockin' marketing site for a subscription-based product, you are likely in need of a pricing table</p>
 	    	</div>
 	    	
@@ -396,17 +374,13 @@
 	    </div>
  	</div>
 
-
-
-    
-
     <!-- Footer -->
     <footer class="row">
         <div class="large-12 columns">
             <hr>
             <div class="row">
                 <div class="large-6 columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
+                  <p>&copy; Copyright here. Lorem ipsum there.</p>
                 </div>
                 <div class="large-6 columns">
                     <ul class="inline-list right">

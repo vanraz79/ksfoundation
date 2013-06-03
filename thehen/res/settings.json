@@ -1,59 +1,59 @@
 {
-	"current":"Default",
-	"presets":{
-		"Default":{
-			"store_logo":"",
-			"carousel_first_image":"",
-			"carousel_second_image":"",
-			"carousel_third_image":"",
-			"background_image":"",
-			"home_banner_text":"Welcome to my online store!",
-			"home_banner_description":"Use the theme options on the left to update the look&feel.",
-			"default_font_color":"#5C5C5C",
-			"default_font_size":"13px",
-			"default_font_face":"Arial",
-			"heading_color":"#353535",
-			"default_link_color":"#0088CC",
-			"background_pattern":"",
-			"banner_pattern":"",
-			"background_color":"#FFFFFF",
-			"media_box_color":"#FFFFFF",
-			"media_box_pattern":"",
-			"enable_responsive_layout":1,
-			"enable_background_repeat":1,
-			"display_home_banner":1,
-			"show_product_details":1,
-			"display_media_box_border":0
-		}
-	},
-	"data":{
-		"pattern":[
-			"",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/pinstripe.gif",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/brick_squares.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/black_linen.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/blue_dust.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/concrete_wall.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/criss_cross.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/dark_mosaic.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/green_gobbler.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/grunge_wall.png",
-			"http:\/\/api.kloudstores.com\/global\/patterns\/type.png"
-		],
-		"font_face":[
-			"Arial",
-			"Arial Black",
-			"Georgia",
-			"Impact",
-			"Lucida Console",
-			"Tahoma",
-			"Verdana",
-			"Times New Roman"
-		],
-		"font_size":[
-			"12px",
-			"13px",
-			"14px"
-		]
-	}
+  "current":"Default",
+  "presets":{
+    "Default":{
+      "store_logo":"",
+      "carousel_first_image":"",
+      "carousel_second_image":"",
+      "carousel_third_image":"",
+      "background_image":"",
+      "home_banner_text":"Welcome to my online store!",
+      "home_banner_description":"Use the theme options on the left to update the look&feel.",
+      "default_font_color":"#5C5C5C",
+      "default_font_size":"13px",
+      "default_font_face":"Arial",
+      "heading_color":"#353535",
+      "default_link_color":"#0088CC",
+      "background_pattern":"",
+      "banner_pattern":"",
+      "background_color":"#FFFFFF",
+      "media_box_color":"#FFFFFF",
+      "media_box_pattern":"",
+      "enable_responsive_layout":1,
+      "enable_background_repeat":1,
+      "display_home_banner":1,
+      "show_product_details":1,
+      "display_media_box_border":0
+    }
+  },
+  "data":{
+    "pattern":[
+      "",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/pinstripe.gif",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/brick_squares.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/black_linen.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/blue_dust.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/concrete_wall.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/criss_cross.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/dark_mosaic.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/green_gobbler.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/grunge_wall.png",
+      "http:\/\/api.kloudstores.com\/global\/patterns\/type.png"
+    ],
+    "font_face":[
+      "Arial",
+      "Arial Black",
+      "Georgia",
+      "Impact",
+      "Lucida Console",
+      "Tahoma",
+      "Verdana",
+      "Times New Roman"
+    ],
+    "font_size":[
+      "12px",
+      "13px",
+      "14px"
+    ]
+  }
 }

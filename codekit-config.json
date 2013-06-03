@@ -2,30 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8300",
   "files" : {
-    "\/sass\/foundation\/components\/_side-nav.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_side-nav.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_side-nav.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/foundation\/components\/_tables.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_tables.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_tables.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_pricing-tables.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -35,6 +11,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_pricing-tables.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_block-grid.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_block-grid.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_block-grid.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -50,15 +38,27 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_block-grid.scss" : {
+    "\/sass\/foundation\/components\/_tables.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_block-grid.scss",
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_tables.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_block-grid.css",
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_tables.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_side-nav.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_side-nav.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_side-nav.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -134,18 +134,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_split-buttons.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_split-buttons.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_split-buttons.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_dropdown.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -155,6 +143,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_dropdown.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_split-buttons.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_split-buttons.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_split-buttons.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -182,18 +182,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_sub-nav.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_sub-nav.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_sub-nav.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_thumbs.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -203,6 +191,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_thumbs.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_sub-nav.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_sub-nav.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_sub-nav.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -218,18 +218,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_keystrokes.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_keystrokes.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_keystrokes.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_top-bar.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -239,6 +227,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_top-bar.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_keystrokes.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_keystrokes.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_keystrokes.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -254,15 +254,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/thehen\/res\/normalize.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/thehen\/res\/normalize.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/sass\/foundation\/components\/_inline-lists.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -275,17 +266,26 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/settings.scss" : {
+    "\/sass\/foundation\/components\/_switch.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/settings.scss",
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_switch.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/thehen\/res\/settings.css",
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_switch.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/thehen\/res\/normalize.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/thehen\/res\/normalize.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/foundation\/components\/_forms.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -299,15 +299,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_switch.scss" : {
+    "\/sass\/settings.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_switch.scss",
+      "inputAbbreviatedPath" : "\/sass\/settings.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_switch.css",
+      "outputAbbreviatedPath" : "\/thehen\/res\/settings.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -369,15 +369,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/thehen\/res\/app.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/thehen\/res\/app.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/sass\/foundation\/components\/_orbit.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -389,6 +380,15 @@
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_orbit.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/thehen\/res\/app.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/thehen\/res\/app.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/foundation\/components\/_reveal.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -462,18 +462,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/foundation\/components\/_alert-boxes.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_alert-boxes.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_alert-boxes.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/foundation\/components\/_progress-bars.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -483,6 +471,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_progress-bars.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/foundation\/components\/_alert-boxes.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/foundation\/components\/_alert-boxes.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/foundation\/thehen\/res\/_alert-boxes.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
