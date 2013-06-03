@@ -65,34 +65,21 @@
     		<p>The other products panel is a great way to let your customers know what products you're currently promoting.  You can use it to feature products on sale, currently in season, newly back in stock, or just products you'd like to sell more of.</p>
     	</div>
     	{% endif %}	
-      <div class="row">
 
     <!-- Thumbnails -->
-
-        <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail" />
-            <h6 class="panel">Description</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/500x500&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/500x500&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://placehold.it/500x500&text=Thumbnail" />
-          <h6 class="panel">Description</h6>
-        </div>
-
-
+		<ul class="large-block-grid-4 small-block-grid-2 product-listing">
+		    {% for item in collections.featured.list limit:4 %}
+		        <li>
+		            <a href="{{ item | product_url }}" class="thumbnail">
+		                <img src="{{ item.images.first }}?height=220&fill=1&align=center">
+		                <strong>{{ item.name }}</strong>
+		            </a>
+		        </li>
+		    {% endfor %}
+		</ul>
+        
     <!-- End Thumbnails -->
 
-      </div>
     </div>
 </div>
 <script type="text/javascript">
