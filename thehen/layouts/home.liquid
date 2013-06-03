@@ -223,7 +223,7 @@
                 {% for item in collections.featured.list limit:4 %}
                     <li>
                         <a href="{{ item | product_url }}" class="thumbnail">
-                            <img src="{{ item.images.first }}?width=260&height=220&fill=1&align=center">
+                            <img src="{{ item.images.first }}?height=220&fill=1&align=center">
                             <strong>{{ item.name }}</strong>
                         </a>
                     </li>
@@ -249,7 +249,7 @@
                         {% for item in collections.featured.list %}
                             <li>
                                 <a href="{{ item | product_url }}" class="thumbnail">
-                                    <img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+                                    <img src="{{ item.images.first }}?height=180&fill=1&align=center">
                                     <strong>{{ item.name }}</strong>
                                 </a>
                             </li>

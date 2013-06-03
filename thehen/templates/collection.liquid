@@ -5,11 +5,11 @@
 </div>
 <div class="row">
 	<div class="large-9 small-12 columns">
-		<ul class="small-block-grid-2 large-block-grid-4 product-listing">
+		<ul class="small-block-grid-2 large-block-grid-4 medium-block-grid-3 product-listing">
 			{% for item in collection.list %}
 				<li>
 					<a href="{{ item | product_url }}" class="thumbnail">
-						<img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+						<img src="{{ item.images.first }}?height=180&fill=1&align=center">
 						<strong>{{ item.name }}</strong>
 					</a>
 				</li>
