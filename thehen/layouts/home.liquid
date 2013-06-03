@@ -255,36 +255,21 @@
                     {% if settings.store.name == "thehen" %}
                     <h3>Featured products (narrow)</h3>
                     {% endif %}
-                    <div class="row">
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                        <div class="large-4 small-6 columns">
-                            <img src="http://placehold.it/500x500&text=Thumbnail" />
-                            <h6 class="panel">Description</h6>
-                        </div>
-                    </div>
+                    <ul class="small-block-grid-3 product-listing">
+                        {% for item in collections.featured.list %}
+                            <li>
+                                <a href="{{ item | product_url }}" class="thumbnail">
+                                    <img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+                                    <strong>{{ item.name }}</strong>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    
                 </div>
 
-                <div class="large-4 columns hide-for-small">
-                    <h4>Sidenav</h4><hr/>
+                <div class="large-4 small-12 columns">
+                    <h4>Sidenav</h4>
                     <div class="section-container accordion" data-section="accordion">
                         <section>
                             <p class="title" data-section-title><a href="#panel1">Category 1</a></p>

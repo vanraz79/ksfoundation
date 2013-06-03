@@ -1,24 +1,74 @@
-<div class="row-fluid">
-	<div class="span12">
+<div class="row">
+	<div class="large-12 columns	">
 		<h1>{{ collection.name }}</h1>
-		<ul class="thumbnails">
+	</div>
+</div>
+<div class="row">
+	<div class="large-9 small-12 columns">
+		<ul class="small-block-grid-4 product-listing">
 			{% for item in collection.list %}
-				<li class="span3">
-					<div class="thumbnail">
-						<a href="{{ item | product_url }}" class="thumbnail">
-							<img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
-						</a>
-						<div class="caption">
-							<h5>{{ item.name }}</h5>
-							<p>{{ item.body-text }}</p>
-							<h6>{{ item.price | money }}</h6>
-							<span>
-								<a href="{{ item | product_url }}">View details &raquo;</a>
-							</span>
-						</div>
-					</div>
+				<li>
+					<a href="{{ item | product_url }}" class="thumbnail">
+						<img src="{{ item.images.first }}?width=260&height=180&fill=1&align=center">
+						<strong>{{ item.name }}</strong>
+					</a>
 				</li>
 			{% endfor %}
 		</ul>
 	</div>
+	<div class="large-3 small-12 columns">
+	    <div class="section-container accordion" data-section="accordion">
+	        <section>
+	            <p class="title" data-section-title><a href="#panel1">Category 1</a></p>
+	            <div class="content" data-section-content>
+	                <ul class="side-nav">
+	                    <li><a href="#">Lorem ipsum dolor.</a></li>
+	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                </ul>
+	            </div>
+	        </section>
+	        <section>
+	            <p class="title" data-section-title><a href="#panel2">Category 2</a></p>
+	            <div class="content" data-section-content>
+	                <ul class="side-nav">
+	                    <li><a href="#">Lorem ipsum dolor.</a></li>
+	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                </ul>
+	            </div>
+	        </section>
+	        <section>
+	            <p class="title" data-section-title><a href="#panel1">Category 3</a></p>
+	            <div class="content" data-section-content>
+	                <ul class="side-nav">
+	                    <li><a href="#">Lorem ipsum dolor.</a></li>
+	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                </ul>
+	            </div>
+	        </section>
+	        <section>
+	            <p class="title" data-section-title><a href="#panel2">Category 4</a></p>
+	            <div class="content" data-section-content>
+	                <ul class="side-nav">
+	                    <li><a href="#">Lorem ipsum dolor.</a></li>
+	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
+	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
+	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
+	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                </ul>
+	            </div>
+	        </section>
+	    </div>
+	</div>
+
 </div>
