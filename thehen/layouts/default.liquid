@@ -57,6 +57,17 @@
 </head>
 
 <body>
+    <div class="row">
+        <div class="large-12 columns">
+            <a class="hide-for-medium-down brand"  href="{{ "/" | home_url }}">
+            {% if theme.header_store_logo %}
+                <img src="{{ theme.header_store_logo | resource_url }}" />
+            {% else %}
+                <span>{{ settings.store.name }}</span>
+            {% endif %}
+            </a>
+        </div>
+    </div>
 	<div class="row">
         <div class="large-12 columns">  
 
@@ -66,7 +77,7 @@
                   <!-- Title Area -->
                   <li class="name">
                     <h1>
-                      <a href="#">
+                      <a class="show-for-medium-down" href="/">
                         {{ settings.store.name }}
                       </a>
                     </h1>
@@ -92,7 +103,7 @@
                         {% endfor %}
                     </ul>
 
-                    <div class="right search-form hide-for-small hide-for-medium">
+                    <div class="right search-form show-for-medium-up">
                         <div class="row collapse">
                         <form>
                             <div class="large-9 small-8 columns"><input type="search"></div>

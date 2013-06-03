@@ -58,10 +58,13 @@
 </div>
 <div class="row hide-for-small">
     <div class="large-12 columns">
+    	{% if settings.store.name == "thehen" %}
+    	<hr />
     	<h3>Other products</h3>
     	<div class="infopanel">
     		<p>The other products panel is a great way to let your customers know what products you're currently promoting.  You can use it to feature products on sale, currently in season, newly back in stock, or just products you'd like to sell more of.</p>
-    	</div>	
+    	</div>
+    	{% endif %}	
       <div class="row">
 
     <!-- Thumbnails -->
