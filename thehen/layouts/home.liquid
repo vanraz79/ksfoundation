@@ -21,7 +21,9 @@
     <script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.topbar.js"></script>
     <script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.section.js"></script>
 	{{ 'app.js' | resource_url | script_tag }}
-	<!--
+	
+    {% if settings.store.name == "thehen" %}
+    <!--
 	
 	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.js"></script>
 	
@@ -54,6 +56,7 @@
 	<script src="{{'lib/foundation/' | global_url }}js/foundation/foundation.interchange.js"></script>
 	
 	-->
+    {% endif %}
 </head>
 
 <body>
