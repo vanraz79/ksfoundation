@@ -2,7 +2,7 @@
   "current":"Default",
   "presets":{
     "Default":{
-      "store_logo":"",
+      "header_store_logo":"",
       "carousel_first_image":"",
       "carousel_second_image":"",
       "carousel_third_image":"",

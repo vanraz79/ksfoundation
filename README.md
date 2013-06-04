@@ -6,8 +6,8 @@ The *[Kloudstores](http://www.kloudstores.com)* mother-theme.
 Live preview: http://thehen.kloudstores.com
 
 
-Built with Foundation 4
------------------------
+Built with Foundation 4 + Sass + Compass
+----------------------------------------
 
 Yes, I'm a huge fan of *[Foundation](http://foundation.zurb.com)*'s!
 
