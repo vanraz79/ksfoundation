@@ -1,4 +1,4 @@
-thehen
+TheHen
 ======
 
 The kloudstores mother-theme
