@@ -11,7 +11,7 @@ Live preview: http://thehen.kloudstores.com
 Why use TheHen?
 ---------------
 
-TheHen accelerates development by giving you access to higher-level language which is Sass. Sass is much quicker and cleaner to code, but still compile to normal CSS and JavaScript.
+TheHen accelerates development by giving you access to Sass. Sass is much quicker and cleaner to code, but still compile to normal CSS and JavaScript.
 
 
 Built with Foundation 4 + Sass + Compass
