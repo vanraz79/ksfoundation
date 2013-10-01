@@ -1,5 +1,5 @@
-TheHen
-======
+KS-Foundation
+=============
 
 TheHen is a toolkit for bootstrapping and developing  *[Kloudstores](http://www.kloudstores.com)* themes in a tidy environment using Sass.
 
@@ -8,8 +8,8 @@ TheHen represents a neatly organized source folder with clean and simple scaffol
 Live preview: http://thehen.kloudstores.com
 
 
-Why use TheHen?
----------------
+Why use KS-Foundation?
+----------------------
 
 TheHen accelerates development by giving you access to Sass. Sass is much quicker and cleaner to code, but still compile to normal CSS and JavaScript.
 
