@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="{{ product.meta_keywords }}">
+  <meta name="description" content="{{ product.meta_description }}">
+  <meta name="author" content="{{ product.meta_author }}">
+	<title>{{ settings.store.name }}</title>
+	{{ 'normalize.css' | resource_url | stylesheet_tag  }}
+	{{ 'app.css' | resource_url | stylesheet_tag  }}
+
+	{{ 'v1' | api_url | script_tag }}
+    <script src="{{'lib/foundation5/' | global_url }}js/vendor/custom.modernizr.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.topbar.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.orbit.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.dropdown.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.accordion.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.tab.js"></script>
+
+	{{ 'app.js' | resource_url | script_tag }}
+
+    {% if settings.store.name == "ksfoundation" %}
+    <!--
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.abide.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.accordion.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.alert.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.clearing.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.dropdown.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.interchange.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.joyride.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.magellan.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.offcanvas.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.orbit.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.reveal.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.tab.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.tooltip.js"></script>
+    <script src="{{'lib/foundation5/' | global_url }}js/foundation/foundation.topbar.js"></script>
+    -->
+    {% endif %}
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-2 columns">
+            <a class="hide-for-medium-down brand"  href="{{ "/" | home_url }}">
+            {% if theme.header_store_logo %}
+                <img src="{{ theme.header_store_logo | resource_url }}" />
+            {% else %}
+                <span>{{ settings.store.name }}</span>
+            {% endif %}
+            </a>
+        </div>
+    </div>
+	<div class="row">
+        <div class="large-12 columns">
+            <!-- Navigation -->
+            <nav class="top-bar" data-topbar>
+              <ul class="title-area">
+                <li class="name">
+                  <!-- Leave this empty -->
+                </li>
+              </ul>
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  <li class="has-dropdown">
+                    <ul class="dropdown">
+                      <li><a href="#">First link in dropdown</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-form">
+                    <div class="row collapse">
+                      <div class="large-8 small-9 columns">
+                        <input type="text" placeholder="Find Stuff">
+                      </div>
+                      <div class="large-4 small-3 columns">
+                        <a href="#" class="alert button expand">Search</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- Left Nav Section -->
+                <ul class="left">
+                  {% for link in menu.main-menu.links %}
+                      <li class="{% if link.active %}active{% endif %} {% if link.links %}has-dropdown{% endif %}">
+                          <a href="{{ link.href }}">{{ link.name }}</a>
+                          {% if link.links %}
+                          <ul class="dropdown">
+                              {% for sublink in link.links %}
+                                  <li {% if sublink.active %}class="active"{% endif %}>
+                                      <a href="{{ sublink.href }}">{{ sublink.name }}</a>
+                                  </li>
+                              {% endfor %}
+                          </ul>
+                          {% endif %}
+                      </li>
+                  {% endfor %}
+                </ul>
+              </section>
+            </nav>
+            <!-- End Navigation -->
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="large-12 columns">
+        	{{ content }}
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr>
+            <div class="row">
+                <div class="large-6 columns">
+                  <p>&copy; Copyright here. Lorem ipsum there.</p>
+                </div>
+                <div class="large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

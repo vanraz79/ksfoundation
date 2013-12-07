@@ -1,0 +1,109 @@
+{% assign image_thumb_size = "80" %}
+
+<div class="row cart page">
+	<div class="large-12 columns">
+		<hr>
+	</div>
+	<div class="large-12 columns">
+		<h1>Shopping cart</h1>
+
+		{% case url_params.error_code %}
+			{% when 13 %}
+                <div data-alert class="alert-box warning radius">
+                  Warning: no stock.
+                  <a href="#" class="close">&times;</a>
+                </div>
+			{% when 14 %}
+				<div data-alert class="alert-box warning radius">
+                  Unavialable quantity
+                  <a href="#" class="close">&times;</a>
+                </div>
+		{% endcase %}
+
+		{% if cart.count > 0 %}
+			<table class="">
+				<thead>
+					<tr>
+						<th class="image">&nbsp;</th>
+						<th class="product">Product</th>
+						<th class="price">Price</th>
+						<th class="quantity">Quantity</th>
+						<th class="total">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in cart.items %}
+					<tr>
+						<td class="image">
+							<a href="{{ item | product_url }}"><img width="{{ image_thumb_size }}" height="{{ image_thumb_size }}" src="{{ item.images.first }}?width={{ image_thumb_size }}&height={{ image_thumb_size }}&fill=1&align=center" alt="{{ item.name }}" border="0" /></a>
+						</td>
+						<td class="name">
+							<h5>
+                                <a href="{{ item | product_url }}">
+                                {% for vindex in item.variant limit:1 offset:item.variant_index %}
+                                  {{ vindex.sku }}
+                                {% endfor %}
+                                </a>
+                            </h5>
+							<p>
+								{{ item.body-text | trim_words: 50 }}
+							</p>
+							<span>
+								<a href="/cart/remove?pid={{ item.id }}&variant={{ item.variant_index }}">Delete from cart</a>
+							</span>
+						</td>
+						<td class="price">{{ item.price | money:0 }}</td>
+						<td class="quantity">
+							<form action="/cart/update" method="POST">
+								<input type="hidden" name="variant" value="0">
+								<input type="hidden" name="pid" value="{{ item.id }}">
+								<div class="row">
+									<div class="large-3 columns"><input class="quantity" type="text" value="{{ item.quantity }}" name="quantity" /></div>
+									<div class="large-4 columns left"><input type="submit" class="button tiny" value="Update" /></div>
+								</div>
+							</form>
+						</td>
+						<td class="total">{{ item.price | multiply : item.quantity | money:0 }}</td>
+					</tr>
+
+					{% endfor %}
+				</tbody>
+				<tfoot>
+                    <tr>
+                        <td class="subtotal text-right" colspan="5">
+                            {% if cart.discount > 0 %}
+                            <form action="/cart/update" method="POST">
+                                <input type="hidden" name="discount" value="0">
+                                <span class="discount-value">Reducere (voucher): <em>{{ cart.discount | money}}</em><br /></span>
+                            </form>
+                            {% endif %}
+
+                            {% if shipping.list %}
+                            <span class="discount-value">Transport: <em>{% for rate in shipping.list %}{{ rate.name }} ({{ rate.shipping_value | money }})
+                            {% endfor %}</em><br /></span>
+                            <div class="large-12 text-right total">Subtotal: <span>{{ cart.total | plus:14 | money }}</span></div>
+                            {% else %}
+                            <div class="large-12 text-right total">Subtotal: <span>{{ cart.total | money }}</span></div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tfoot>
+			</table>
+
+			<form class="form-stacked" id="cartForm" action="/checkout" method="POST">
+                <div class="large-2 push-5 text-center promo-box {% if cart.discount != 0 %}hide{% endif %}">
+                    <input class="promo-code-input" type="text" name="promotion_code"  placeholder="Have a promo code?" />
+                </div>
+				<div class="large-12 columns text-center">
+                    {% if cart.discount != 0 %}
+                        <a href="/review_order"  class="button primary large"  />Continue &rarr;</a>
+                    {% else %}
+                        <a href="#0" id="submitCart" class="button primary large"  />Continue &rarr;</a>
+                    {% endif %}
+				</div>
+			</form>
+		{% else %}
+			<p class="text-center">The cart is empty. Happy <a href="/">shopping</a>!</p>
+		{% endif %}
+	</div>
+</div>

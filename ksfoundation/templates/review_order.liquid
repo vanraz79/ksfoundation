@@ -1,0 +1,162 @@
+{% assign image_thumb_size = "30" %}
+
+<form class="form-stacked" action="/save_order" method="POST">
+
+	<div class="row">
+		<div class="span6">
+			<fieldset>
+				<legend>Contact information</legend>
+
+				<div class="control-group">
+					<div class="row">
+						<div class="span3">
+							<label for="bill_fname">First name:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_fname }}</span>
+							</div>
+						</div>
+						<div class="span3">
+							<label for="bill_lname">Last name:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_lname }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="row">
+						<div class="span3">
+							<label for="bill_email">Email address:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_email }}</span>
+							</div>
+						</div>
+						<div class="span3">
+							<label for="bill_phone">Phone number:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_phone }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Delivery address</legend>
+
+				<div class="control-group">
+					<div class="row">
+						<div class="span3">
+							<label for="bill_address">Address:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_address }}</span>
+							</div>
+						</div>
+						<div class="span3">
+							<label for="bill_zipcode">Postal code:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_zipcode }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="row">
+						<div class="span3">
+							<label for="bill_city">City:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_city }}</span>
+							</div>
+						</div>
+						<div class="span3">
+							<label for="bill_country">Country:</label>
+							<div class="input">
+								<span class="info">{{ user.bill_country }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="row">
+						<div class="span3">
+							<a class="btn" href="/user_information?continue=/review_order">Update information</a>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="span6">
+			<fieldset>
+				<legend>Shopping cart</legend>
+				<div class="control-group">
+					<table class="condensed-table cart-table">
+						<thead>
+							<tr>
+								<th class="image">&nbsp;</th>
+								<th class="product">Product</th>
+								<th class="price">Price</th>
+								<th class="quantity">Quantity</th>
+								<th class="total">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for item in cart.items %}
+							<tr>
+								<td class="image">
+									<a href="{{ item | product_url }}"><img width="{{ image_thumb_size }}" height="{{ image_thumb_size }}" src="{{ item.images.first }}?width={{ image_thumb_size }}&height={{ image_thumb_size }}&fill=1&align=center" alt="{{ item.name }}" border="0" /></a>
+								</td>
+								<td class="name">
+									<h5><a href="{{ item | product_url }}">{{ item.name | trim_words: 50 }}</a></h5>
+									{{ item.body-text | trim_words : 50 }}
+								</td>
+								<td class="price">{{ item.price | money }}</td>
+								<td class="quantity">{{ item.quantity }}</td>
+								<td class="total">{{ item.price | multiply : item.quantity | money }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+						<tfoot>
+							<tr>
+								<td class="subtotal" colspan="5">
+									Subtotal: <span>{{ cart.total | money }}</span>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</fieldset>
+
+			{% if payment_options.count > 1 %}
+				<fieldset>
+					<legend>Payment</legend>
+
+					<div class="control-group">
+						<ul class="payment_options">
+							{% for option in payment_options.list %}
+								<li>
+									<input {% if forloop.index0 == 0 %}checked{% endif %} type="radio" name="payment_option" value="{{ option.id }}" id="payment_{{ option.id }}" />
+									<label for="payment_{{ option.id }}">{{ option.name }}</label>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</fieldset>
+			{% else %}
+				{% if payment_options.count == 1 %}
+					<input type="hidden" name="payment_option" value="{{ payment_options.list.0.id }}" />
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
+
+	<input type="hidden" name="extra" value="">
+
+	<div class="row">
+		<div class="span12">
+			<p class="pull-right">
+				<input type="submit" class="btn btn-primary" value="Save order &rarr;" />
+			</p>
+		</div>
+	</div>
+</form>

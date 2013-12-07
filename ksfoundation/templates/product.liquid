@@ -1,0 +1,116 @@
+<div class="row product product-page">
+	<div class="large-12 columns">
+		<hr>
+	</div>
+	<div class="large-6 columns gallery">
+
+        <div class="image text-center {% if product.variant.0.on_sale == 1 %}promo{% endif %}">
+            <a href="{{ product.images.first }}" class="popmeup" rel="gallery">
+                <img src="{{ product.images.first }}?width=460&height=460&align=center" alt="{{ product.name }}" />
+            </a>
+        </div>
+        {% assign product_image_count = product.image | size %}
+        {% if product_image_count > 1 %}
+        <ul>
+            {% for image in product.image %}
+                {% if image.position != 0 %}
+                <li>
+                    <a class="popmeup" rel="gallery" href="{{ image.src }}"><img class="img" rel="{{ image.src }}" src="{{ image.src }}?width=83&height=83" /></a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+	</div>
+	<div class="large-6 columns info">
+		<form action="/cart/add" method="POST" class="custom">
+			<h1>{{ product.name }}</h1>
+			<h5>SKU: <span class="sku">{{ product.variant.0.sku }}</span></h5>
+			<div class="row">
+				<div class="large-12 columns">
+					<p>{{ product.body-html }}</p>
+				</div>
+			</div>
+
+
+			{% if product.variants.count > 1 %}
+			<div class="row">
+				<div class="large-12 columns">
+					<p class="price">
+		                {{ product.price | money:0 }} {% if product.variant.0.on_sale == 1 %}<span class="oldPrice">{{ product.variant.0.old_price | money:0 }}</span>{% endif %}
+		            </p>
+				</div>
+			</div>
+
+			<div class="row">
+
+                <div class="large-6 left columns">
+                <p style="margin-bottom:0; padding-bottom:0">Options:</p>
+				<select class="variants" name="variant">
+				{% for variant in product.variant %}
+					{% if variant.available %}
+						<option value="{{ variant.position }}">{{ variant.title }} -  {{ variant.price | money }} </option>
+					{% else %}
+						<option value="{{ variant.position }}" disabled>{{ variant.title }} - Sold out</option>
+					{% endif %}
+				{% endfor %}
+				</select>
+                </div>
+
+			</div>
+
+			{% else %}
+
+                {% if product.stock > 0 %}
+			        <p class="price">
+					  {{ product.price | money }} {% if product.variant.0.on_sale == 1 %}<span class="oldPrice">{{ product.variant.0.old_price | money }}</span>{% endif %}
+                    </p>
+
+				{% else %}
+					<p class="price">
+                      Stoc epuizat!
+                    </p>
+				{% endif %}
+
+			{% endif %}
+			<div class="row">
+				<div class="large-12 columns">
+					<input type="hidden" name="pid" value="{{ product.id }}">
+					<input type="hidden" name="quantity" value="1">
+					<input type="submit" class="button add-to-cart-button" value="Add to cart">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row">
+    <div class="large-12 columns similare">
+        {% if product.tags %}
+        <h4>Related products</h4>
+        {% endif %}
+        <ul class="large-block-grid-6 small-block-grid-3 product-listing">
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $( ".variants" ).change(function() {
+            var variant_index = $(this).val();
+
+            var thisJson = '/product/{{ product.id }}/.json';
+            $.getJSON(thisJson, function(kloudstores) {
+                var old_price = kloudstores.product.variant[variant_index].old_price;
+
+                if(typeof old_price != "undefined") {
+                    var price = kloudstores.product.variant[variant_index].price + " lei " + "<span class='oldPrice'>" + kloudstores.product.variant[variant_index].old_price + " lei</span>";
+                } else {
+                    var price = kloudstores.product.variant[variant_index].price + " lei ";
+                }
+
+
+                $('.sku').hide().html(kloudstores.product.variant[variant_index].sku).fadeIn();
+                $('.price').hide().html(price).fadeIn();
+            });
+        });
+    });
+</script>

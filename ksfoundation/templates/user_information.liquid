@@ -1,0 +1,96 @@
+<div class="row">
+	<div class="span12">
+		{% if form.error %}
+			<div class="alert alert-error">
+				<!-- warn about required fields -->
+				{% for item in form.required_name %}
+					The field <strong>{{ item | replace: "Bill ","" }}</strong> is required! <br/>
+				{% endfor %}
+
+				<!-- warn about invalid fields -->
+				{% for item in form.invalid_name %}
+					The field <strong>{{ item | replace: "Bill","" }}</strong> is invalid! <br/>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<form action="/user_information" method="POST">
+			<fieldset>
+				<legend>Contact information</legend>
+
+				<div class="control-group">
+					<div class="row">
+						<div class="span5">
+							<label for="bill_fname">First name:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_fname" id="bill_fname" value="{{ user.bill_fname }}" />
+							</div>
+						</div>
+						<div class="span5">
+							<label for="bill_lname">Last name:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_lname" id="bill_lname" value="{{ user.bill_lname }}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="span5">
+							<label for="bill_email">Email address:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_email" id="bill_email" value="{{ user.bill_email }}" />
+							</div>
+						</div>
+						<div class="span5">
+							<label for="bill_phone">Phone number:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_phone" id="bill_phone" value="{{ user.bill_phone }}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Delivery address</legend>
+
+				<div class="control-group">
+					<div class="row">
+						<div class="span5">
+							<label for="bill_address">Address:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_address" id="bill_address" value="{{ user.bill_address }}" />
+							</div>
+						</div>
+						<div class="span5">
+							<label for="bill_zipcode">Postal code:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_zipcode" id="bill_zipcode" value="{{ user.bill_zipcode }}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="span5">
+							<label for="bill_city">City:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_city" id="bill_city" value="{{ user.bill_city }}" />
+							</div>
+						</div>
+						<div class="span5">
+							<label for="bill_country">Country:</label>
+							<div class="input">
+								<input type="text" size="30" name="bill_country" id="bill_country" value="{{ user.bill_country }}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<button class="btn btn-primary" type="submit">Save information</button>
+
+			<input type="hidden" name="continue" value="{{ page.continue }}" />
+			<input type="hidden" name="_required_fields" value="bill_email,bill_address,bill_zipcode,bill_city,bill_country">
+		</form>
+	</div>
+</div>
