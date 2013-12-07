@@ -1,0 +1,132 @@
+@import "settings";
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Behold, here are all the Foundation components.
+@import
+  "foundation/components/accordion",
+  "foundation/components/alert-boxes",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/button-groups",
+  "foundation/components/buttons",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/grid",
+  "foundation/components/inline-lists",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  "foundation/components/switch",
+  "foundation/components/tables",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility";
+
+/* Logo */
+.brand {
+    padding: 20px 0;
+    white-space: nowrap;
+
+    span {
+        color:#000;
+        font-size: emCalc(30px);
+        font-weight: bold;
+    }
+}
+
+/* Slider 3rd party navigation */
+.slider-secondary-bg {
+    background:#333;
+    padding: 15px 0;
+    margin:15px 0;
+}
+
+/* Slider with side navigation */
+.slider-nav {
+    background:lighten(#000, 20%);
+    padding: 0;
+
+    li {
+        margin: 0 0 2px 0;
+        padding: 0;
+
+
+        a {
+            background:lighten(#000, 30%);
+            padding: 2%;
+            color: #fff;
+
+            &:hover {
+                background:lighten(#000, 40%);
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 500px;
+        }
+
+        .price {
+            font-size: emCalc(12px);
+            color: lighten(#000, 50%);
+        }
+    }
+
+    .thumb {
+        display: block;
+        border: solid 1px #ccc;
+        position: relative;
+        width: 50px;
+        height:40px;
+        overflow: hidden;
+        float: left;
+        margin-right: 10px;
+    }
+}
+
+/* The grid with products */
+.product-listing {
+    margin-top: 0;
+    .thumbnail {
+        border: solid 1px #ccc;
+        padding: 5px;
+        display: block;
+        text-align: center;
+
+        strong {
+            font-size: emCalc(14px);
+            color: #000;
+            font-weight: normal;
+            display: inherit;
+            padding: 5px 0;
+            //@include ellipsis();
+        }
+    }
+}
+
+table {
+    width: 100%;
+    input {
+        font-size: 11px;
+    }
+}
