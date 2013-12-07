@@ -1,74 +1,93 @@
 <div class="row">
 	<div class="large-12 columns	">
+		<hr>
 		<h1>{{ collection.name }}</h1>
 	</div>
 </div>
 <div class="row">
 	<div class="large-9 small-12 columns">
-		<ul class="small-block-grid-2 large-block-grid-4 medium-block-grid-3 product-listing">
-			{% for item in collection.list %}
-				<li>
-					<a href="{{ item | product_url }}" class="thumbnail">
-						<img src="{{ item.images.first }}?height=180&fill=1&align=center">
-						<strong>{{ item.name }}</strong>
-					</a>
-				</li>
-			{% endfor %}
+		<ul class="large-block-grid-3 small-block-grid-2 product-listing">
+		    {% for item in collections.featured.list %}
+		    <li>
+		        <form action="/cart/add" method="POST">
+		        <a class="thumbnail {% if item.variant.0.on_sale == 1 %}promo{% endif %}" href="/product/{{ item.id }}">
+		            <span ><img src="{{ item.images.first }}?width=220"></span>
+		            <strong class="name">{{ item.name }}</strong>
+		            <div class="row">
+		                <div class="large-12 columns text-center">
+		                    {{ item.price | money:0 }}
+		                </div>
+		            </div>
+		        </a>
+		        </form>
+		    </li>
+		    {% endfor %}
 		</ul>
 	</div>
 	<div class="large-3 small-12 columns">
-	    <div class="section-container accordion" data-section="accordion">
-	        <section>
-	            <p class="title" data-section-title><a href="#panel1">Category 1</a></p>
-	            <div class="content" data-section-content>
+
+	    <dl class="accordion" data-accordion>
+	        <dd>
+	            <a href="#panel1">Category 1</a>
+	            <div id="panel1" class="content">
 	                <ul class="side-nav">
-	                    <li><a href="#">Lorem ipsum dolor.</a></li>
-	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
-	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
-	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
 	                </ul>
 	            </div>
-	        </section>
-	        <section>
-	            <p class="title" data-section-title><a href="#panel2">Category 2</a></p>
-	            <div class="content" data-section-content>
+	        </dd>
+	        <dd>
+	            <a href="#panel2">Category 2</a>
+	            <div id="panel2" class="content">
 	                <ul class="side-nav">
-	                    <li><a href="#">Lorem ipsum dolor.</a></li>
-	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
-	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
-	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
-	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
 	                </ul>
 	            </div>
-	        </section>
-	        <section>
-	            <p class="title" data-section-title><a href="#panel1">Category 3</a></p>
-	            <div class="content" data-section-content>
+	        </dd>
+	        <dd>
+	            <a href="#panel3">Category 3</a>
+	            <div id="panel3" class="content">
 	                <ul class="side-nav">
-	                    <li><a href="#">Lorem ipsum dolor.</a></li>
-	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
-	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
-	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
 	                </ul>
 	            </div>
-	        </section>
-	        <section>
-	            <p class="title" data-section-title><a href="#panel2">Category 4</a></p>
-	            <div class="content" data-section-content>
+	        </dd>
+	        <dd>
+	            <a href="#panel4">Category 4</a>
+	            <div id="panel4" class="content">
 	                <ul class="side-nav">
-	                    <li><a href="#">Lorem ipsum dolor.</a></li>
-	                    <li><a href="#">Maxime, nisi, eaque.</a></li>
-	                    <li><a href="#">Vel, explicabo, adipisci!</a></li>
-	                    <li><a href="#">Consequuntur, laborum, a?</a></li>
-	                    <li><a href="#">Nulla, dolore, fugit.</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
 	                </ul>
 	            </div>
-	        </section>
-	    </div>
+	        </dd>
+	        <dd>
+	            <a href="#panel5">Category 5</a>
+	            <div id="panel5" class="content">
+	                <ul class="side-nav">
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                    <li><a href="#">Lorem ipsum</a></li>
+	                </ul>
+	            </div>
+	        </dd>
+	    </dl>
 	</div>
 
 </div>
